@@ -1,0 +1,24 @@
+<div class="jumbotron">
+  <h2>TODO List</h2>
+  <p>Welcome, Mr Bean</p>
+
+  <div class="list">
+    <ul>
+      <li ng-repeat="listItem in list track by $index">
+      <span ng-class="{'strike':listItem.done}">{{listItem.text}}</span>
+      <button tab-index='0' class="remove" ng-click="removeItem($index)">remove</button>
+      <button class="done" ng-click="toggleDone($index)">
+          <span ng-show="listItem.done">undo</span>
+         <span ng-hide="listItem.done">done</span>
+      </button>
+      </li>
+    </ul>
+  </div>
+ 
+</div>
+
+
+<textarea rows="4" class='new' ng-model="ipListItem"></textarea>
+<button class="add" ng-class="{'disabled':ipListItem==''}" ng-click="addToList()">Add to list</button>
+
+  
